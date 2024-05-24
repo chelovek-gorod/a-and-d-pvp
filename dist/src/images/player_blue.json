@@ -1,0 +1,185 @@
+{"frames": {
+
+"airship":
+{
+	"frame": {"x":0,"y":0,"w":256,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
+	"sourceSize": {"w":256,"h":256}
+},
+"airship_shadow":
+{
+	"frame": {"x":0,"y":256,"w":256,"h":256},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
+	"sourceSize": {"w":256,"h":256}
+},
+"plane":
+{
+	"frame": {"x":0,"y":512,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"plane_shadow":
+{
+	"frame": {"x":128,"y":512,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"spider_0":
+{
+	"frame": {"x":0,"y":640,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"spider_1":
+{
+	"frame": {"x":64,"y":640,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"spider_2":
+{
+	"frame": {"x":128,"y":640,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"spider_3":
+{
+	"frame": {"x":192,"y":640,"w":64,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":64},
+	"sourceSize": {"w":64,"h":64}
+},
+"bomb_carrier_0":
+{
+	"frame": {"x":0,"y":704,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"bomb_carrier_1":
+{
+	"frame": {"x":128,"y":704,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"bomb_carrier_2":
+{
+	"frame": {"x":0,"y":832,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"bomb_carrier_3":
+{
+	"frame": {"x":128,"y":832,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"bomb_carrier_4":
+{
+	"frame": {"x":0,"y":960,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128}
+},
+"gatling_0":
+{
+	"frame": {"x":128,"y":960,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"gatling_1":
+{
+	"frame": {"x":0,"y":1088,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"gatling_2":
+{
+	"frame": {"x":92,"y":1088,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"gatling_3":
+{
+	"frame": {"x":0,"y":1180,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"rocket":
+{
+	"frame": {"x":92,"y":1180,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"rocket_rocket":
+{
+	"frame": {"x":184,"y":1180,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"tesla":
+{
+	"frame": {"x":0,"y":1272,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+"tesla_top":
+{
+	"frame": {"x":92,"y":1272,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+}},
+"animations": {
+	"spider": ["spider_0","spider_1","spider_2","spider_3","spider_2","spider_1"],
+	"bomb_carrier": ["bomb_carrier_0","bomb_carrier_1","bomb_carrier_2","bomb_carrier_3","bomb_carrier_4"],
+	"gatling": ["gatling_0","gatling_1","gatling_2","gatling_3"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "player_blue.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":1364},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e1c0e70914232e5448e75b0a910b131c:239ad19c354d6d96856acc281bb9f0a5:ad4cb422f02c3f9926b9c565ca3e4cd8$"
+}
+}
