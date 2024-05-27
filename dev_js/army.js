@@ -4,8 +4,6 @@ import { setBaseDamageFrom } from './events'
 import { state } from './state'
 import { playSound } from './sound'
 import { tickerAdd, tickerRemove, removeSprite } from "./application"
-import { gameMap } from "./gameMap"
-import { miniMap } from "./miniMap"
 import { turnSpriteToTarget, moveSprite, getDistance } from './functions'
 import Effect from "./effects"
 import { isResult } from './game'

@@ -8,6 +8,7 @@ const startState = {
         60 * 60,
     ],
     nextUnitDelays: [60, 50, 40],
+    
     currentWave: 0,
 
     player: {

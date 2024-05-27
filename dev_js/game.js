@@ -1,18 +1,20 @@
-import { getAppScreen, Layer, removeSprite } from './application'
+import { getAppScreen, Layer } from './application'
 import GameMenu from './gameMenu'
 import Background from './background'
 import GameIU from './gameUI'
 import GameMap from './gameMap'
 import MiniMap from './miniMap'
 import { smoothShowElement } from './functions'
-import { playMusic, stopMusic, setMusicList } from './sound'
+import { setMusicList } from './sound'
 import { EventHub, events } from './events'
 import FullScreenMessage from './fullscreen'
 import Opponent from './training'
 import ResultMenu from './resultMenu'
-import { BombCarrier, Spider, Plane, Airship } from './army'
 import { restartState } from './state'
 import ConnectMenu from './connectMenu'
+
+// use for test (add units by pressing keys)
+import { BombCarrier, Spider, Plane, Airship } from './army'
 
 let screenData, gameMenu, mainLayer, gameBackground, gameMap, gameUI, miniMap, resultMenu, connectMenu
 
@@ -20,17 +22,7 @@ export let isTraining = false
 export let isResult = false
 
 let bgSpriteName = 'background_tile_1' // 1, 2 or 3
-/*
-const mapScheme = [
-    '--A--GG--A--',
-    '------------',
-    'A--xx--xx--A',
-    '---xx--xx---',
-    '------------',
-    'G----BB----G',
-    '---xxBbxx---', // b - for add trees in map generating
-]
-*/
+
 const mapScheme = [
     '--A---GG---A--',
     '--------------',

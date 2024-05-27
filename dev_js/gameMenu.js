@@ -2,16 +2,15 @@ import { Container, Sprite, Text } from 'pixi.js'
 import { sprites, sounds } from "./loader"
 import { textStyles } from "./fonts"
 import { EventHub, events, startTraining, showConnectMenu } from './events'
-import { playSound } from './sound'
-import { connectSocket } from './client'
+import { playSound, setSoundsOnOff, setMusicOnOff } from './sound'
+
+let isSoundAndMusic = true
 
 const settings = {
     width: 2048,
     height: 2048,
 }
 settings.rate = settings.width / settings.height
-
-let isGameOptionsShown = false
 
 class MenuButton extends Sprite {
     constructor( y, text, parent, index ) {
@@ -55,7 +54,7 @@ class GameMenu extends Container {
 
         this.button_1 = new MenuButton( -90, 'ТРЕНИРОВКА', this, 1 )
         this.button_2 = new MenuButton(   0, 'СРАЖЕНИЕ',   this, 2 )
-        this.button_3 = new MenuButton(  90, 'НАСТРОЙКИ',  this, 3 )
+        this.button_3 = new MenuButton(  90, 'БЕЗ ЗВУКА',  this, 3 )
         
         this.screenResize( screenData )
         EventHub.on( events.screenResize, this.screenResize.bind(this) )
@@ -81,6 +80,7 @@ class GameMenu extends Container {
         switch(index) {
             case 1 : startTraining(); playSound(sounds.menu); break;
             case 2 : showConnectMenu(); playSound(sounds.menu); break;
+            case 3 : this.switchSound(); break;
         }
     }
 
@@ -88,6 +88,14 @@ class GameMenu extends Container {
         this.button_1.getHover(false)
         this.button_2.getHover(false)
         this.button_3.getHover(false)
+    }
+
+    switchSound() {
+        isSoundAndMusic = !isSoundAndMusic
+        setSoundsOnOff(isSoundAndMusic)
+        setMusicOnOff(isSoundAndMusic)
+
+        this.button_3.text.text = isSoundAndMusic ? 'БЕЗ ЗВУКА' : 'ВКЛ. ЗВУК'
     }
 }
 

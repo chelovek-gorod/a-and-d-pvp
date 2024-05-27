@@ -7,7 +7,7 @@ import { gameMap } from './gameMap'
 import { isResult } from './game'
 
 let socket = null
-let target = '' // opponent name
+let target = '' // opponent socket name ('first' or 'second')
 
 export function closeSocket() {
     if (socket) {
@@ -17,7 +17,7 @@ export function closeSocket() {
 }
 
 export function connectSocket( ip, info ) {
-    closeSocket()
+    closeSocket() // for only one connection (socket instance)
 
     socket = new WebSocket(`ws://${ip}:9898`)
     socket.onopen = openSocket
@@ -26,13 +26,21 @@ export function connectSocket( ip, info ) {
 
 function openSocket() {
     socket.onmessage = getMessage
-    socket.onclose = closeServer
-    socket.onerror = closeServer
+
+    let disconnectResultData = {
+        disconnect: true,
+        isWin: true,
+        isBaseDestroyed: false,
+        playerOreMinded: state.player.totalOreMined,
+        opponentOreMiOreMinded: state.opponent.totalOreMined
+    }
+    socket.onclose = () => updateUIandShowResults(disconnectResultData)
+    socket.onerror = () => updateUIandShowResults(disconnectResultData)
 }
 
 function getMessage( data ) {
     const message = JSON.parse(data.data)
-    if (message.type !== 'oreAdd') console.log('get message', message)
+    //if (message.type !== 'oreAdd') console.log('get message', message)
 
     // types: 'connect', 'start', 'disconnect', 'oreAdd', 'towerAdd', 'towerUpgrade', 'armyAdd', 'armyUpgrade', 'getDamage'
     // data:     name     null    description,   number  {type, index}     type         type         type          number
@@ -46,8 +54,14 @@ function getMessage( data ) {
             startOnline()
             break;
         case 'disconnect':
-            console.log('opponent disconnect')
-            closeConnection()
+            const menuData = {
+                disconnect: true,
+                isWin: true,
+                isBaseDestroyed: false,
+                playerOreMinded: state.player.totalOreMined,
+                opponentOreMiOreMinded: state.opponent.totalOreMined
+            }
+            updateUIandShowResults(menuData)
             break;
 
         case 'oreAdd':
@@ -103,39 +117,17 @@ function getMessage( data ) {
 
             socket.send( JSON.stringify({target: 'server', message: 'stop'}) )
 
-            closeConnection( resultData )
+            updateUIandShowResults( resultData )
             break;
     }
 }
 
-function closeConnection( data ) {
-    if (isResult) return    
+function updateUIandShowResults( resultData ) {
+    if (isResult) return
 
     closeSocket()
     gameUI.stop()
     tickerClear()
-
-    if (data) showResults(data)
-    else {
-        let resultData = {
-            disconnect: true,
-            isWin: true,
-            isBaseDestroyed: false,
-            playerOreMinded: state.player.totalOreMined,
-            opponentOreMiOreMinded: state.opponent.totalOreMined
-        }
-        showResults(resultData)
-    }
-}
-
-function closeServer() {
-    let resultData = {
-        disconnect: true,
-        isWin: true,
-        isBaseDestroyed: false,
-        playerOreMinded: state.player.totalOreMined,
-        opponentOreMiOreMinded: state.opponent.totalOreMined
-    }
     showResults(resultData)
 }
 

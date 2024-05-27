@@ -1,7 +1,8 @@
 import { TilingSprite, Sprite, Container, Text, Graphics } from "pixi.js"
 import { sprites, sounds } from "./loader"
 import { textStyles } from "./fonts"
-import { EventHub, events, setHelpText, energyOnChange, componentsOnChange, scienceOnChange,
+import { EventHub, events, setHelpText,
+    energyOnChange, componentsOnChange, scienceOnChange,
     oreMiningChanged, componentsMiningChanged, scienceMiningChanged,
     bombCarrierOnChange, spiderOnChange, planeOnChange, airshipOnChange,
     playerTowerUpgrade, showResults, sendMessage } from './events'
@@ -1264,10 +1265,8 @@ class GameIU extends Container {
                 }
 
                 if (isTraining ) {
-                    console.log('state.opponent.army', state.opponent.army)
-                    this.opponent.nextWave('oops')
+                    this.opponent.nextWave()
                     gameMap.attackers = gameMap.attackers.concat(state.opponent.army)
-                    console.log('gameMap.attackers', gameMap.attackers)
                     state.opponent.army = []
                 } else {
                     sendMessage({type: 'attack', data: [...state.player.army]})

@@ -46,6 +46,7 @@ export function smoothShowElement( element, side = null, callback = null ) {
     }
 
     if (element.alpha) element.alpha = 0
+    
     if (!element.visible) element.visible = true
 
     element.tick = (delta) =>{

@@ -1,8 +1,6 @@
 import { AnimatedSprite } from "pixi.js"
-import { sprites, sounds } from "./loader"
-import { playSound } from './sound'
+import { sprites } from "./loader"
 import { removeSprite } from "./application"
-import { gameMap } from "./gameMap"
 
 class Effect extends AnimatedSprite {
     constructor(x, y, effect, parent) {

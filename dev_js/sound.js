@@ -11,6 +11,8 @@ export function setSoundsOnOff( isTurnOn = false ) {
 
 export function setMusicOnOff( isTurnOn = false ) {
     isMusicOn = isTurnOn
+    if (isTurnOn) playMusic()
+    else stopMusic()
 }
 // -----------------------------------------
 

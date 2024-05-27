@@ -1,12 +1,9 @@
-import { TilingSprite, Sprite, Container, Text, AnimatedSprite, Graphics } from "pixi.js"
+import { Sprite, Graphics } from "pixi.js"
 import { sprites, sounds } from "./loader"
-import { textStyles } from "./fonts"
-import { EventHub, events, setHelpText, resetAddTower, componentsOnChange } from './events'
+import { EventHub, events } from './events'
 import { state } from './state'
 import { playSound } from './sound'
 import { tickerAdd, tickerRemove, removeSprite } from "./application"
-import { gameMap } from "./gameMap"
-import { miniMap } from "./miniMap"
 import { turnSpriteToTarget, moveSprite, getDistance, drawLightning } from './functions'
 import Effect from "./effects"
 import { isResult } from './game'

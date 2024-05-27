@@ -125,24 +125,8 @@ export function initFontStyles() {
             strokeThickness: 4
         }),
 
-        // EXAMPLES
-        /*
-        gradientText: new TextStyle({
-            fontFamily: fontKeys.RobotoBlack,
-            fontSize: 32,
-            fill: ['#000000', '#ff0064', '#000000'],
-
-            dropShadow: true,
-            dropShadowColor: '#ffffff',
-            dropShadowBlur: 6,
-            dropShadowAngle: 0,
-            dropShadowDistance: 0,
-
-            wordWrap: true,
-            wordWrapWidth: 400,
-        }),
-
-        textWithShadow: new TextStyle({
+        /* EXAMPLE
+        gradientTextWithShadow: new TextStyle({
             fontFamily: fontKeys.RobotoBlack,
             fontSize: 18,
             fontStyle: 'normal',
